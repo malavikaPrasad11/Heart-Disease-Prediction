@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <form method="POST">
+            <label>Age:</label><input type="number" name="age" required><br>
+            <label>Sex:</label>
+            <select name="sex">
+                <option>Male</option>
+                <option>Female</option>
+            </select><br>
+            <label>Chest Pain Type:</label>
+            <select name="cp">
+                <option>Typical Angina</option>
+                <option>Atypical Angina</option>
+                <option>Non-anginal Pain</option>
+                <option>Asymptomatic</option>
+            </select><br>
+            <label>Resting BP:</label><input type="number" name="bp" required><br>
+            <label>Cholesterol:</label><input type="number" name="chol" required><br>
+            <label>Fasting Blood Sugar:</label>
+            <select name="fbs">
+                <option>< 120 mg/dL</option>
+                <option>> 120 mg/dL</option>
+            </select><br>
+            <label>Resting ECG:</label>
+            <select name="restecg">
+                <option>Normal</option>
+                <option>ST-T Abnormality</option>
+                <option>Left Ventricular Hypertrophy</option>
+            </select><br>
+            <label>Max Heart Rate:</label><input type="number" name="thalach" required><br>
+            <label>Exercise Induced Angina:</label>
+            <select name="exang">
+                <option>No</option>
+                <option>Yes</option>
+            </select><br>
+            <label>ST Depression (oldpeak):</label><input type="number" step="0.1" name="oldpeak" required><br>
+            <label>ST Slope:</label>
+            <select name="slope">
+                <option>Upsloping</option>
+                <option>Flat</option>
+                <option>Downsloping</option>
+            </select><br><br>
+            <div class="button-group">
+            <input type="submit" value="Predict">
+            </div>
+
+        </form>
+
+        {% if result %}
+        <div class="result {{ 'danger' if 'Heart Disease' in result else 'safe' }}">
+        {{ result }}
+        </div>
+        {% endif %}
+
+</body>
+</html>
