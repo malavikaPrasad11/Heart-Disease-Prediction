@@ -27,8 +27,7 @@ This project predicts whether a patient is likely to have heart disease based on
 ### 1️⃣ Clone the Repository:
 
 ```bash
-git clone <your-github-repo-link>
-cd heart_disease_project
+git clone https://github.com/malavikaPrasad11/Heart-Disease-Prediction
 ````
 
 ### 2️⃣ Create Virtual Environment:
