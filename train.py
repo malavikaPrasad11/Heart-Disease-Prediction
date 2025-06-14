@@ -11,7 +11,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 
 # Load dataset
-df = pd.read_csv("C:/Users/ADMIN/OneDrive/Desktop/internship/Heart Disease/data/dataset.csv")
+df = pd.read_csv("C:/Users/ADMIN/OneDrive/Desktop/internship/Heart Disease Prediction/data/dataset.csv")
 X = df.drop("target", axis=1)
 y = df["target"]
 

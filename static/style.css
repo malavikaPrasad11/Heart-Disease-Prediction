@@ -10,9 +10,9 @@ body, html {
 
 /* Centered form container */
 .container {
-    background-color: rgba(255, 255, 255, 0.4);  /* White with 40% opacity */
-    backdrop-filter: blur(10px);                 /* Optional: adds blur effect */
-    -webkit-backdrop-filter: blur(10px);         /* For Safari support */
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     max-width: 500px;
     margin: 60px auto;
     padding: 30px;
@@ -20,10 +20,12 @@ body, html {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
     animation: fadeIn 1s ease-in-out;
 }
+
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
 }
+
 @media screen and (max-width: 600px) {
     .container {
         margin: 30px 20px;
@@ -57,42 +59,51 @@ select {
     box-sizing: border-box;
 }
 
+/* Button group */
 .button-group {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
     margin-top: 30px;
 }
 
-.button-group input[type="submit"]{
-    flex: 1 1 0;
+.button-group input[type="submit"] {
+    flex: 1;
     padding: 12px;
     font-size: 16px;
+    font-weight: bold;
     border: none;
     border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
-    white-space: nowrap;
-}
-.button-group input[type="submit"] {
-    background-color: #27ae60;
     color: white;
+    cursor: pointer;
+    background-color: #27ae60;
+    transition: background-color 0.3s;
 }
 
 .button-group input[type="submit"]:hover {
     background-color: #219150;
 }
 
-.button-group input[type="reset"] {
-    background-color: #e74c3c;
+/* Reset button styled as link */
+.reset-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
     color: white;
+    background-color: #e74c3c;
+    transition: background-color 0.3s;
+    flex: 1;
 }
 
-.button-group input[type="reset"]:hover {
+.reset-button:hover {
     background-color: #c0392b;
 }
+
+/* Result box */
 .result {
     margin-top: 20px;
     padding: 18px;
@@ -103,14 +114,12 @@ select {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Good prediction result */
 .result.safe {
     background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
 
-/* Heart disease detected */
 .result.danger {
     background-color: #f8d7da;
     color: #721c24;
